@@ -1,6 +1,8 @@
 package de.felix.chatpex.main;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 /**
  * Main Class
@@ -8,8 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class Main extends JavaPlugin{
     public static void main(String[] args){
-        MyCommandExecuter.addCommand("/showp", new CommandshowP());
-        MyCommandExecuter.commandExec("test krass");
+        MyCommandExecuter.addCommand("shoeP", new CommandshowP());
     }
 
     @Override
@@ -20,5 +21,10 @@ public class Main extends JavaPlugin{
     @Override
     public void onDisable() {
 
+    }
+
+    public static String getPrefix(Player p){
+        PermissionsEx pex = (PermissionsEx) PermissionsEx.getPlugin();
+        return pex.getPermissionsManager().getUser(p.getName()).getPrefix();
     }
 }
