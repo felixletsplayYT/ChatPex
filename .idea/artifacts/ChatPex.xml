@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChatPex">
+    <output-path>A:/output</output-path>
+    <root id="archive" name="ChatPex.jar">
+      <element id="module-output" name="ChatPex" />
+    </root>
+  </artifact>
+</component>

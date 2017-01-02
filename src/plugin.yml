@@ -1,0 +1,11 @@
+name: ChatPex
+author: felixletsplay
+version: 1.0
+
+commands:
+  showP:
+    description: Shows Prefix
+
+
+
+main: de.felix.chatpex.main.Main
