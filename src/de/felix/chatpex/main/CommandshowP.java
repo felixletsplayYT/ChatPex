@@ -11,7 +11,8 @@ import ru.tehkode.permissions.bukkit.PermissionsEx;
 public class CommandshowP implements  IMyCommand {
     @Override
     public void execute(String args, Player p) {
-        if (args.split(" ")[1] != null){
+        System.out.println("test");
+        if (args != null){
             PermissionsEx pex = (PermissionsEx) PermissionsEx.getPlugin();
             pex.getPermissionsManager().getUser(args.split(" ")[1]).getPrefix();
             p.sendMessage("Der User " + args.split(" ")[1] + " hat den Prefix " + pex.getPermissionsManager().getUser(args.split(" ")[1]).getPrefix("world"));

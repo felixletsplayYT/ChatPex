@@ -9,12 +9,11 @@ import ru.tehkode.permissions.bukkit.PermissionsEx;
  * Created by felix on 01.01.2017.
  */
 public class Main extends JavaPlugin{
-    public static void main(String[] args){
-        MyCommandExecuter.addCommand("shoeP", new CommandshowP());
-    }
+
 
     @Override
     public void onEnable() {
+        MyCommandExecuter.addCommand("/showP", new CommandshowP());
         this.getServer().getPluginManager().registerEvents(new Listners(), this);
     }
 
