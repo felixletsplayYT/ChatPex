@@ -11,25 +11,22 @@ import java.util.HashMap;
 public class MyCommandExecuter {
     private static HashMap<String, IMyCommand> commands = new HashMap<>();
     public static void commandExec(String command, Player p){
-        boolean leertaste = true;
+        boolean space = true;
         String[] cargs = null;
         if (command.contains(" ")){
             cargs = command.split(" ");
         }else{
-            leertaste = false;
+            space = false;
         }
         String args = "";
-        if (leertaste){
+        if (space){
             for(int i = 1; i < cargs.length; i++){
                 args = args + " "+  cargs[i];
             }
         }else{
             args = null;
         }
-        System.out.println(leertaste);
-        System.out.println(commands.keySet().toArray()[0]);
-        if (leertaste && commands.containsKey(cargs[0].toLowerCase())){
-            System.out.println("test");
+        if (space && commands.containsKey(cargs[0].toLowerCase())){
             commands.get(cargs[0]).execute(args, p);
         }else if(commands.containsKey(command)){
             commands.get(command).execute(args, p);
